@@ -1,0 +1,242 @@
+body{
+  background-color:#607D8B;
+  background-size: cover;
+  overflow-y:hidden; 
+}
+
+.container{
+  min-width: 400px;
+}
+.left-window{
+  float:left;
+  background-color: #5bc0de;
+  width:200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.right-window{
+  float: right;
+  width: calc(100% - 200px);
+  height: calc(100% - 100px);
+  margin-top: 0px;
+}
+
+.page-header{
+  display: block;
+  margin-top:0px;
+  float:left;
+  border-left: 6px solid #ccc;
+	border-bottom: 1px solid #ccc;
+  width:100%;
+  height:50px;
+  box-sizing: border-box;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+div#me{
+  height:calc(100% - 50px);
+  overflow-x: hidden;
+  display: block;
+  font-size:16px;
+  /*background-color:rgba(44,111,255,0);*/
+  margin-top: 48px;
+  width: 100%;
+ 
+}
+button#add{
+  margin-bottom: 20px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+
+
+button#blogout{
+    background-color:white;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    color: black;
+    font-size: 18px;
+    font-style: oblique;
+    margin-top: -10px;
+    width:100px;
+    /*border-style: none;*/
+}
+button#blogout:hover {
+    /* 透明度を20%に指定 */
+    opacity: 0.8;
+}
+button#blogout:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+}
+#logo{
+  color:black;
+  z-index: 2;
+  width:23%;
+}
+
+
+
+div#send{
+  width:100%;
+  display: block;
+  float:right;
+  margin-top: 3px;
+
+
+}
+/*.col-md-3{
+    background-color:GreenYellow;
+    height: 98%;
+    overflow: scroll;
+}
+.col-md-9{
+
+    height: 100%;
+}*/
+div#output{
+  font-size:24px;
+  position:fixed;
+}
+.timeline-panel{
+  background-color:white;
+}
+.logout{
+  float:right;
+}
+
+p#output{
+  font-size: 20px;
+  font-weight: bold;
+  color: #CDDC39;
+  width:calc(100% - 120px);
+  float:left;
+}
+#scale{
+  box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+  height:50px;
+  width: calc(100% - 112px);
+  border-radius: 10px;
+  padding-left:15px;
+  font-size: 30px;
+}
+#scale:focus {
+    border:solid 1px #EEA34A;
+}
+#go,#re{
+  width: 50px;
+  height: 40px;
+  margin-bottom: 12px;
+}
+#the-form{
+  width:100%;
+  padding: 0px 5px;
+}
+p.time{
+  float: right;
+}
+h4{
+  float:left;
+}
+
+h4.users{
+  /*display: inline-block;*/
+  /*color: #111;*/
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width:170px;
+  text-align: left;
+}
+/*h4.users:hover{
+  color: #319ef5;
+  background-color: rgba(0,0,0,0.1);
+}*/
+img#plane,img#reload{
+  margin: -3px;
+}
+
+p.data{
+  clear: both;
+}
+h3{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 182px;
+    position: fixed;
+    font-size: 24px;
+    text-decoration: underline;
+    margin: auto;
+    /*color:red;*/
+    background-color: floralwhite;
+    text-align: center;
+}
+h5.last_post{
+  clear: both;
+}
+
+/*ページを上に*/
+/*.page-top
+{
+	margin: 0 ;
+	padding: 0 ;
+  display: none;
+
+}
+ 
+.page-top p
+{
+	margin: 0 ;
+	padding: 0 ;
+
+	position: fixed ;
+	right: 16px ;
+	bottom: 16px ;
+}*/
+ 
+.move-page-top
+{
+	display: block ;
+	/*background: #D36015 ;*/
+	width: 0px ;
+	height: 0px ;
+
+	/*color: #fff ;*/
+	/*-webkit-transition:all 0.4s ;*/
+	/*-moz-transition:all 0.4s ;*/
+	/*transition:all 0.4s ;*/
+  right: 250px;
+  bottom: 115px;
+  position: absolute ;
+	/*right: 16px ;*/
+	/*bottom: 16px ;*/
+  display: none;
+}
+
+.move-page-top:hover
+{
+	opacity: 0.5 ;
+}
+.timeline-title {
+    font-weight: bold;
+    color: #FF5722;
+    font-style: oblique;
+}
+.btn-danger{
+  float:right;
+}
+.btn-warning{
+  float:right;
+}
+div.arrow{
+  position: relative;
+  bottom:-55px;
+  cursor: pointer;
+}
