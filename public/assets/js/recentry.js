@@ -62,11 +62,11 @@ var recentry_spread = function(data){
         // console.log("h6#"+new_post[j]);
         // 新しく作る予定のh6要素になにも入っていない場合（メッセージなし）
         if($("h6#"+new_post[j]) == null){
-          $("h4[name="+new_post[j]+"]").append("<h6 daata-name='"+new_post[j]+"'>"+nengappi+"</h6>");
+          $("h4[name="+new_post[j]+"]").append("<h6 id='"+new_post[j]+"'>"+nengappi+"</h6>");
           // 入っていた場合中身を消して新しく挿入
         }else{
           $("h6#"+new_post[j]).text("");
-          $("h4[name="+new_post[j]+"]").append("<h6 data-name='"+new_post[j]+"'>"+nengappi+"</h6>");
+          $("h4[name="+new_post[j]+"]").append("<h6 id='"+new_post[j]+"'>"+nengappi+"</h6>");
         }
       //}else{
        //$("h4[name="+new_post[j]+"]").append("<h6 id='"+new_post[j]+"'>メッセージがありません</h6>");
