@@ -4,15 +4,16 @@ var edit = function(){
     if(!$('p#'+msg_id).hasClass('on')){
       $('p#'+msg_id).addClass('on');
       var text = $('p#'+msg_id).text();
-      $('p#'+msg_id).html('<textarea id="edit" maxlength="80">'+text+'</textarea>');
+      $('p#'+msg_id).html('<textarea id="edit"  rows="6" maxlength="80">'+text+'</textarea>');
+      // $('textarea').autosize();
       $('p#'+msg_id+' > textarea').focus().blur(function(){
         var inputValue = $(this).val();
         if(inputValue==''){
           inputValue = this.defaultValue;
           alert('メッセージを空にできません。');
         }
+       
         $(this).parent().removeClass('on').text(inputValue);
-        console.log(inputValue);
         var url = "api/update";
         var data ={
                 id: msg_id,
@@ -34,3 +35,4 @@ var edit = function(){
     }
   });
 }
+

@@ -76,6 +76,7 @@ class Controller_Api extends Controller_Rest{
     public function post_update(){
         $edit_id = $_POST['id'];
         $edit_value = $_POST['editval'];
+        $edit_value = nl2br($edit_value);
         Editmes::edition($edit_id,$edit_value);
         $res = '更新完了';
         return $this->response($res);

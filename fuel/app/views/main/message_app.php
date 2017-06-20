@@ -7,7 +7,7 @@
 <?php echo Asset::css(array('bootstrap.css', 'ss.css', 'mine.css','jquery.fs.tipper.css')); ?>
 <?php echo Asset::js(array('jquery-3.2.1.js','jquery.periodicalupdater.js','jquery.fs.tipper.min.js')); ?>
 <?php echo Asset::js(array('recentry.js','output.js','clickdel.js','scrollbtn.js', 'clicksubmit.js','reload.js','sendmessage.js','edit.js')); ?>
-
+<?php echo Asset::js('autosize.js'); ?>
 
 
 <script>
@@ -32,6 +32,7 @@ $(document).ready(function(){
         });
 });
 
+</script>
 
 </script>
 <style>

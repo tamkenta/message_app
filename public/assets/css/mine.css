@@ -242,3 +242,6 @@ div.arrow{
   bottom:-55px;
   cursor: pointer;
 }
+textarea{
+  resize: vertical;
+}
