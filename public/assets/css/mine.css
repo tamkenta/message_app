@@ -237,6 +237,9 @@ h5.last_post{
 .btn-warning{
   float:right;
 }
+.btn-danger,.btn-warning{
+  border-radius: 0px;
+}
 div.arrow{
   position: relative;
   bottom:-55px;
