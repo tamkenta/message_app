@@ -3,8 +3,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <?php echo Asset::css('bootstrap.css'); ?>
 <?php echo Asset::css('login.css'); ?>
+<?php echo Asset::js('jquery-3.2.1.js') ?>
+<?php echo Asset::js('bootstrap.js') ?>
+<?php echo Asset::js('visible.js'); ?>
 <meta charset="utf-8">
 <!--<link href="c:\xampp\htdocs\www\public\assets\css\style.css" rel="stylesheet">-->
 <!--<script type="text/javascript" src="c:\xampp\htdocs\www\public\assets\js\script.js"></script>-->
@@ -18,6 +22,9 @@
     float:right;
 }
 </style>
+
+
+
 <!--<link rel="stylesheet" type="text/css" href="bootstrap.css">-->
 <title>Bootstrap </title>
 </head>
@@ -48,7 +55,7 @@
                 echo Form::password('password','',array('id' => 'inputPassword', 'class' => 'form-control', 'placeholder' => 'Password', 'required')); 
                 ?>
                 <!--<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
-                
+                 <input id="show-ps" type="checkbox" /><label for="show-ps">パスワードを表示</label>
 
                 <?php
                   echo Form::button('signin','Sign in',array('class' => 'btn btn-lg btn-primary btn-block btn-signin'));

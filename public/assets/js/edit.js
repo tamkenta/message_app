@@ -12,6 +12,7 @@ var edit = function(){
           alert('メッセージを空にできません。');
         }
         $(this).parent().removeClass('on').text(inputValue);
+        console.log(inputValue);
         var url = "api/update";
         var data ={
                 id: msg_id,

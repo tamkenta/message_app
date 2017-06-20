@@ -164,6 +164,7 @@ img#plane,img#reload{
 
 p.data{
   clear: both;
+  margin-bottom: 20px;
 }
 h3{
     white-space: nowrap;
@@ -231,6 +232,7 @@ h5.last_post{
 }
 .btn-danger{
   float:right;
+  margin-left: 5px;
 }
 .btn-warning{
   float:right;

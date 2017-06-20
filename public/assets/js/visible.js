@@ -1,0 +1,11 @@
+$(document).ready(function(){
+  $('#show-ps').change(function(){
+    if($(this).prop('checked')){
+      $('#inputPassword').attr('type','text');
+      console.log($(this).prop('checked'));
+    }else{
+      $('#inputPassword').attr('type','password');
+      console.log($(this).prop('checked'));
+    }
+  });
+});
