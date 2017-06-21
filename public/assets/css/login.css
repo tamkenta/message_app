@@ -1,3 +1,9 @@
 #red{
   color:red;
 }
+#show-ps,#ps{
+  cursor: pointer;
+}
+.form-control{
+  margin-bottom: 10px;
+}

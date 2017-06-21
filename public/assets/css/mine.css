@@ -248,3 +248,7 @@ div.arrow{
 textarea{
   resize: vertical;
 }
+textarea#edit{
+  resize: none;
+  boder:none;
+}

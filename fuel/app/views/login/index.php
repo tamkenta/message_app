@@ -38,11 +38,16 @@
     you can substitue the span of reauth email for a input with the email and
     include the remember me checkbox
     -->
+    
     <br />
     <div class="container">
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <?php
+                $loginuser = Asset::img('login.png',array('id'=>'profile-img', 'class'=>'profile-img-card'));
+                print($loginuser);
+            ?>
+            <!--<img id="profile-img" class="profile-img-card" src="../l?ogin.png" />-->
             <p id="profile-name" class="profile-name-card"></p>
 
             <?php echo Form::open('/login',array('class' => 'form-signin')); ?>
@@ -55,10 +60,10 @@
                 echo Form::password('password','',array('id' => 'inputPassword', 'class' => 'form-control', 'placeholder' => 'Password', 'required')); 
                 ?>
                 <!--<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
-                 <input id="show-ps" type="checkbox" /><label for="show-ps">パスワードを表示</label>
+                 <input id="show-ps" type="checkbox" /><label id="ps" for="show-ps">パスワードを表示</label>
 
                 <?php
-                  echo Form::button('signin','Sign in',array('class' => 'btn btn-lg btn-primary btn-block btn-signin'));
+                  echo Form::button('signin','Sign in',array('class' => 'btn btn-lg btn-primary btn-block btn-signin form-control'));
                   
                 ?>
                 <!--<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>-->

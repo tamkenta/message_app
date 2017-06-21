@@ -28,7 +28,22 @@ var edit = function(){
             multiplier:1,
             maxCalls:1,
         }).done(function(data){
-          console.log(data);
+          $("ul").text("");
+          $.ajax({
+            url:'api/create.json',
+            type:'get',
+            data: {request : id},
+            dataType:'json',
+            multiplier:1,
+            maxCalls:1
+            
+          }).done(function(msg){
+            output(msg);
+            allbtn(msg);
+            recentrydate(); 
+          }).fail(function(msg){
+            alert('Not Connection');
+          })
         }).fail(function(data){
           console.log('Connecction failed');
         })
