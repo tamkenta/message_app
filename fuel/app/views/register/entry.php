@@ -1,12 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="ja">
     <head> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php echo Asset::css(array('bootstrap.css','main.css'));?>
-		<?php echo Asset::js('jquery-3.2.1.min.js'); ?>
-		<?php echo Asset::js('bootstrap.min.js'); ?>
+		<?php echo Asset::js(array('jquery-3.2.1.min.js','bootstrap.min.js','visibleregister.js')); ?>
+
 		<!-- Website CSS style -->
 		
 
@@ -25,12 +23,21 @@
 		p#red{
 			color:red;
 		}
+		input#email{
+			background: white;
+		}
         </style>
 	</head>
 	<?php
     if(!$error==null){
       print("<p id='red'>$error</p>");
     }
+	if(isset($_GET['email'])){
+		$mail = $_GET['email'];
+	}else{
+		$mail='';
+	}
+	
 	?>
 	<body>
 		<div class="container">
@@ -63,7 +70,7 @@
 								<div class="input-group">
 									<span class="input-group-addon">
                                     <i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" required/>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" required disabled value="<?php print($mail); ?>" />
 								</div>
 							</div>
 						</div>
@@ -76,7 +83,7 @@
 								<div class="input-group">
 									<span class="input-group-addon">
                                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required/>
+									<input type="password" class="form-control passset" name="password" id="password"  placeholder="Enter your Password" required/>
 								</div>
 							</div>
 						</div>
@@ -87,10 +94,11 @@
 								<div class="input-group">
 									<span class="input-group-addon">
                                     <i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" required/>
+									<input type="password" class="form-control passset" name="confirm" id="confirm"  placeholder="Confirm your Password" required/>
 								</div>
 							</div>
 						</div>
+						<input id="show-ps" type="checkbox" /><label id="ps" for="show-ps">パスワードを表示</label>
 
 						<div class="form-group ">
                             <?php

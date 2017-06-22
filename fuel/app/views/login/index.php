@@ -26,9 +26,45 @@
 
 
 <!--<link rel="stylesheet" type="text/css" href="bootstrap.css">-->
-<title>Bootstrap </title>
+<title>ログオン </title>
 </head>
 <body>
+
+<!-- line modal -->
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span></button>
+			<h3 class="modal-title" id="lineModalLabel">メールアドレス確認</h3>
+		</div>
+		<div class="modal-body">
+			
+            <!-- content goes here -->
+			<form action="/aftersend" method="post">
+              <div class="form-group">
+                <label for="InputEmail">Email address</label>
+                <input type="email" name="InputEmail" class="form-control" id="InputEmail" placeholder="Enter email">
+              </div>
+           
+              <button type="submit" class="btn btn-default">送信</button>
+            </form>
+
+		</div>
+	</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 <?php
     if(!$error==''){
        print("<p id='red'>$error</p>");
@@ -63,15 +99,13 @@
                  <input id="show-ps" type="checkbox" /><label id="ps" for="show-ps">パスワードを表示</label>
 
                 <?php
-                  echo Form::button('signin','Sign in',array('class' => 'btn btn-lg btn-primary btn-block btn-signin form-control'));
+                  echo Form::button('signin','Sign In',array('class' => 'btn btn-lg btn-primary btn-block btn-signin form-control'));
                   
                 ?>
                 <!--<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>-->
                 <?php echo Form::close();?>
             <!-- /form -->
-            <a href="register" class="btn new account">
-                Sign Up
-            </a>
+                <div id="su" class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-success center-block">Sign Up</button></div>
             <!--<a href="/kinjiro" class="btn kintai">勤怠</a>-->
         </div><!-- /card-container -->
     </div><!-- /container -->

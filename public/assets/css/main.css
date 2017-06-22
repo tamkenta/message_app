@@ -10,6 +10,7 @@ body, html{
  	background-repeat: no-repeat;
  	background-color: #d3d3d3;
  	font-family: 'Oxygen', sans-serif;
+	 overflow: hidden;
 }
 
 
@@ -66,4 +67,7 @@ input::-webkit-input-placeholder {
 .login-register{
 	font-size: 11px;
 	text-align: center;
+}
+.panel-heading{
+	padding: 0px 0px;
 }

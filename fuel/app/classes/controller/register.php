@@ -1,16 +1,22 @@
 <?php
 use \Model\Check;
+use \Model\Sendmail;
+
 class Controller_Register extends Controller{
 //登録が押されたらのメソッド
     public function action_index(){
         //エラーメッセージ用変数初期化
         
         try{
-
             // viewオブジェクトの作成
             $error = '';
             $view = View::forge('register/entry');
             $viewsu = View::forge('login/index');
+            
+            
+
+
+
             //ログイン用のオブジェクト生成
             $auth = Auth::instance();
             if(input::post()){
@@ -44,8 +50,9 @@ class Controller_Register extends Controller{
             return $view;
         }catch(Exception $e){
             
-            $error = "Username already exists'in";
+            $error = "Username already exists'in or Typing error";
             $view->set('error',$error);
+            //$view->set('error',$e);
             return $view;
         }
     }
