@@ -7,6 +7,7 @@ $(document).ready(function(){
   // ユーザ選択イベント
   recentrydate();
   $(".test-btn").click(function(){
+    $("div#send").fadeIn();
     // クリックされたユーザを変数に格納
     var id = $(this).attr('name');
     // console.log(id);

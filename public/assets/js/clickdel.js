@@ -1,7 +1,8 @@
 var clickdel = function(){
   $(".btn-danger").click(function(){
+    var m_id = $(this).attr("id");
     if (confirm("削除しますか？")) {
-      var m_id = $(this).attr("id");
+      
       $("ul").text("");
       
       var $f = $(this);
@@ -28,9 +29,7 @@ var clickdel = function(){
           maxCalls:1
         }).done(function(msg){
           output(msg);
-          clickdel();
           recentrydate();
-          scrollbtn();
         }).fail(function(data){
           alert("shock");
         })
