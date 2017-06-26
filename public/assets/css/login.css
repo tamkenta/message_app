@@ -1,5 +1,16 @@
+.form-signin{
+    width:50%;
+    padding-left:20px;
+}
+.kintai{
+    float:right;
+}
 #red{
   color:red;
+	font-size:40px;
+}
+p#exist{
+    color:red;
 }
 #show-ps,#ps{
   cursor: pointer;

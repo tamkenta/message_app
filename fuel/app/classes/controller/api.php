@@ -5,6 +5,7 @@ use Model\Allmes;
 use Model\Delmes;
 use Model\Recentry;
 use Model\Editmes;
+use Model\Exist;
 class Controller_Api extends Controller_Rest{
     
     // HTTP メソッドが GET の場合
@@ -80,5 +81,22 @@ class Controller_Api extends Controller_Rest{
         Editmes::edition($edit_id,$edit_value);
         $res = '更新完了';
         return $this->response($res);
+    }
+
+    public function post_check(){
+        $exist = $_POST['address'];
+        $result = Exist::existion($exist);
+        if(count($result) == 0){
+            $res = ['isUse'=>true];
+            return $this->response($res);
+        }else{
+            $res = ['isUse'=>false,"errorMessage"=>"既に使用されています。"];
+            $res = ['isUse'=>false,"errorMessage"=>"メールアドレスの形式で入力してください。"];
+            
+            return $this->response($res);
+        }
+        // DB error
+        $res = ["errorMessage"=>"処理に失敗しました。"];
+            
     }
 }

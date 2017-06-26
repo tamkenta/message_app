@@ -1,30 +1,15 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 
 <?php echo Asset::css('bootstrap.css'); ?>
 <?php echo Asset::css('login.css'); ?>
 <?php echo Asset::js('jquery-3.2.1.js') ?>
 <?php echo Asset::js('bootstrap.js') ?>
-<?php echo Asset::js('visible.js'); ?>
+<?php echo Asset::js(array('visible.js','checkmail.js')); ?>
 <meta charset="utf-8">
 <!--<link href="c:\xampp\htdocs\www\public\assets\css\style.css" rel="stylesheet">-->
 <!--<script type="text/javascript" src="c:\xampp\htdocs\www\public\assets\js\script.js"></script>-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style type="text/css">
-.form-signin{
-    width:50%;
-    padding-left:20px;
-}
-.kintai{
-    float:right;
-}
-</style>
-
-
-
 <!--<link rel="stylesheet" type="text/css" href="bootstrap.css">-->
 <title>ログオン </title>
 </head>
@@ -42,13 +27,13 @@
 		<div class="modal-body">
 			
             <!-- content goes here -->
-			<form action="/aftersend" method="post">
-              <div class="form-group">
+			<form id='modal' action="/aftersend" method="post">
+              <div id="sub" class="form-group">
                 <label for="InputEmail">Email address</label>
                 <input type="email" name="InputEmail" class="form-control" id="InputEmail" placeholder="Enter email">
               </div>
-           
-              <button type="submit" class="btn btn-default">送信</button>
+            <button type="button" id="check" class="btn btn-default">確認</button>
+              
             </form>
 
 		</div>
@@ -105,7 +90,7 @@
                 <!--<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>-->
                 <?php echo Form::close();?>
             <!-- /form -->
-                <div id="su" class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-success center-block">Sign Up</button></div>
+                <div id="su" class="center"><button id = "sign" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-success center-block">Sign Up</button></div>
             <!--<a href="/kinjiro" class="btn kintai">勤怠</a>-->
         </div><!-- /card-container -->
     </div><!-- /container -->

@@ -22,6 +22,8 @@
         }
 		p#red{
 			color:red;
+			font-size:26px;
+			text-align:center;
 		}
 		input#email{
 			background: white;
@@ -32,11 +34,9 @@
     if(!$error==null){
       print("<p id='red'>$error</p>");
     }
-	if(isset($_GET['email'])){
-		$mail = $_GET['email'];
-	}else{
-		$mail='';
-	}
+	//print($mail['email']);
+	//print((empty($_SERVER['HTTPS']) ? 'http://' : 'https://').$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+	
 	
 	?>
 	<body>
@@ -49,7 +49,7 @@
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-                    <?php echo Form::open('/register',array('class' => 'form-horizontal')); ?>
+                    <?php echo Form::open('register/user',array('class' => 'form-horizontal')); ?>
 					<!--<form class="form-horizontal" method="post" action="">-->
 						
                         
@@ -70,7 +70,7 @@
 								<div class="input-group">
 									<span class="input-group-addon">
                                     <i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" required disabled value="<?php print($mail); ?>" />
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" required disabled value="<?php print($mail);?>" />
 								</div>
 							</div>
 						</div>
@@ -102,7 +102,8 @@
 
 						<div class="form-group ">
                             <?php
-                                 echo Form::button('register','Register',array('class' => 'btn btn-primary btn-lg btn-block login-button'));
+								echo Form::hidden('mail',$mail);
+                                echo Form::button('register','Register',array('class' => 'btn btn-primary btn-lg btn-block login-button'));
                             ?>
 							<!--<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>-->
 						</div>
