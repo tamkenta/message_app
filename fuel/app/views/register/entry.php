@@ -110,7 +110,7 @@
 					<!--</form>-->
                     <?php echo Form::close();?>
 				
-                    <a href="login">Go Login!!</a>
+                    <a href="/">Go Login!!</a>
 				</div>
 			</div>
 		</div>

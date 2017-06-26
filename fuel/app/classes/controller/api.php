@@ -58,10 +58,10 @@ class Controller_Api extends Controller_Rest{
     }
 
     public function post_del(){
+        $me = Auth::get_screen_name();
         $m_id = $_POST['id']; 
-        $result = Delmes::delete($m_id);
-        $complete = 'Delete completion';
-        return $this->response($complete);
+        $res = Delmes::delete($m_id,$me);
+        return $this->response($res);
     }
 
     public function get_recentry(){
@@ -75,11 +75,11 @@ class Controller_Api extends Controller_Rest{
         }
     }
     public function post_update(){
+        $me = Auth::get_screen_name();
         $edit_id = $_POST['id'];
         $edit_value = $_POST['editval'];
         $edit_value = nl2br($edit_value);
-        Editmes::edition($edit_id,$edit_value);
-        $res = '更新完了';
+        $res = Editmes::edition($edit_id,$edit_value,$me);
         return $this->response($res);
     }
 

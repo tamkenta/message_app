@@ -28,6 +28,7 @@ var edit = function(){
             multiplier:1,
             maxCalls:1,
         }).done(function(data){
+          console.log(data);
           $("ul").text("");
           $.ajax({
             url:'api/create.json',

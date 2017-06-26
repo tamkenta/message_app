@@ -18,6 +18,7 @@ var clickdel = function(){
           multiplier:1,
           maxCalls:1,
       }).done(function(data){
+        console.log(data);
         $.ajax({
           url:'api/create.json',
           type:'get',

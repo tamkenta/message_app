@@ -20,9 +20,10 @@ $(function(){
           console.log(data);
           if(data['isUse']){
             $("button#check").remove();
+            $('p#exist').remove();
             $("div#sub").append('<button type="submit" class="btn btn-info">送信</button>');
           }else{
-            $('p#exist').html('');
+            $('p#exist').remove();
             $("button#check").before('<p id="exist">このメールアドレスは使えません</p>');
           }
         }).fail(function(data){
@@ -33,3 +34,9 @@ $(function(){
   //});
 });
 //append<button type="submit" class="btn info">送信</button>
+$(function(){
+  $("button#sign").click(function(){
+    console.log('フォーカス');
+    $("input#InputEmail").focus();
+  });
+});
