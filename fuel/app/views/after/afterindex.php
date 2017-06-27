@@ -2,6 +2,9 @@
 <html lang="ja">
 <head> 
 <meta name="viewport" content="width=device-width, initial-scale=1">		
+<?php echo Asset::css('bootstrap.css'); ?>
+<?php echo Asset::js('jquery-3.2.1.js') ?>
+<?php echo Asset::js('bootstrap.js') ?>
 <title>送信完了</title>
 <style>
 div.waku{
@@ -28,9 +31,9 @@ body{
   <div>
     <p>メールに記載のURLから、登録を完了させてください。</p>
     <p>尚、このページは更新しますと何度もメールが送られてしまうため、消して頂くことを推奨します。</p>
-    <a href="https://www.google.co.jp/">不明点がある方はこちらへ</a>
+    <!--<button class="btn">--><a href="https://www.google.co.jp/">不明点がある方はこちらへ</a><!--</button>-->
   </div>
-  <a href="/">サインインはこちらへ</a>
+  <!--<button class="btn">--><a href="/">サインインはこちらへ</a><!--</button>-->
 </div>
 </body>
 </html>
