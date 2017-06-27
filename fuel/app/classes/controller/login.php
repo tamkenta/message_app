@@ -1,9 +1,12 @@
 <?php
-
+use Model\Access;
 class Controller_Login extends Controller
 {
     public function action_index()
     {
+
+        $access_ip = $_SERVER["REMOTE_ADDR"];
+        Access::iplog($access_ip);
        
         //すでにログイン済であればログイン後のページへリダイレクト
         Auth::check() and Response::redirect('main');
