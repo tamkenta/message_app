@@ -102,7 +102,7 @@ $(document).ready(function(){
             <!--<div id="page-top" class="page-top">-->
             <div id="send">
             <form id="the-form" action="api/in" method="post">
-                <input id="scale" type="text" name="message" placeholder="Write Message!!" required>
+                <input id="scale" type="text" name="message" placeholder="Write Message!!" required autocomplete="off">
                 <button id="go" class = "btn" type="submit" name="button"><?php print($plane) ?></button>
                 <button id="re" class = "btn" type="reset" name="button"><?php print($reload) ?></button>
             </form>

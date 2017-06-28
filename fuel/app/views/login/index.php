@@ -31,7 +31,8 @@
 			<form id='modal' action="/aftersend" method="post">
               <div id="sub" class="form-group">
                 <label for="InputEmail">Email address</label>
-                <input type="email" name="InputEmail" class="form-control" id="InputEmail" placeholder="Enter email">
+                <input type="email" name="InputEmail" class="form-control" id="InputEmail" placeholder="Enter email" autocomplete="off"> 
+                <!--<input type="hidden" name="address" value="">-->
               </div>
             <button type="button" id="check" class="btn btn-default">確認</button>
               
@@ -75,7 +76,7 @@
             <?php echo Form::open('/login',array('class' => 'form-signin')); ?>
 
                 <span id="reauth-email" class="reauth-email"></span>
-                <?php echo Form::input('mail','',array('id' => 'inputEmail', 'class' => 'form-control', 'placeholder' => 'Your Name or Email address', 'required', 'autofocus'));?>
+                <?php echo Form::input('mail','',array('id' => 'inputEmail', 'class' => 'form-control', 'placeholder' => 'Your Name or Email address', 'required', 'autofocus','autocomplete'=>'off'));?>
                 <!--<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>-->
 
                 <?php

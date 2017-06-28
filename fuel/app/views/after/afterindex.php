@@ -14,6 +14,7 @@ div.waku{
   margin-right: 100px;
   margin-left: 100px;
   box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  background-color: white;
 }
 body{
   height: 100%;
@@ -26,7 +27,7 @@ body{
 
 <div class="waku">
   <div>
-    <h1><?=$add?>宛に<br />メールを送信しました。</h1>
+    <h1>メールを送信しました。</h1>
   </div>
   <div>
     <p>メールに記載のURLから、登録を完了させてください。</p>

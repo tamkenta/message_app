@@ -23,7 +23,7 @@ $(document).ready(function(){
                 };
         $.ajax(url,{
             type:'POST',
-            dataType:'text',
+            dataType:'json',
             timeout: 10000,
             data: data,
             multiplier:1,
@@ -52,6 +52,6 @@ $(document).ready(function(){
             recentrydate();          
             $f[0].reset(); 
           })
-        });
+        })
     });     
 });

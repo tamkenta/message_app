@@ -13,5 +13,9 @@ class Access extends \Model{
         );
         $query->execute();
     }
+    public static function ipexist($ip){
+      $query = \DB::select('ip')->from('access_log');
+      $query->where('ip',$ip);
+    }
 }
 

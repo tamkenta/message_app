@@ -53,6 +53,8 @@ class Controller_Register extends Controller{
         }catch(Exception $e){
             $error = "Username already exists'in or Typing error";
             $view->set('error',$error);
+            // $res =Input::post('mail');
+            $view->set('mail',$res);
             //$view->set('error',$e);
             return $view;
         }

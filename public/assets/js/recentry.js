@@ -16,9 +16,9 @@ var recentry_spread = function(data){
   var new_post = $("div.test-btn").map(function(){
     return $(this).attr("name");
   });
-  console.log(data);
-  console.log(new_post);
-  console.log(current);
+  //console.log(data);
+  //console.log(new_post);
+  //console.log(current);
 
   // jsonで返ってきたオブジェクトの展開のためのループ
   for(let i = 0; i < data.length; i++){

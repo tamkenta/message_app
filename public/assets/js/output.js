@@ -70,6 +70,7 @@ var output = function(data){
       ');
     }
   }
+  
   edit();
   scrollbtn();
   clickdel();

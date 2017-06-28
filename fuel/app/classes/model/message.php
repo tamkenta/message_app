@@ -9,7 +9,7 @@ class Message extends \Model{
         $result->where('username', 'in', $array);
         $result->and_where('touser', 'in', $array);
         $result->order_by('date', 'desc')->limit(20);
-        $res = $result->as_assoc()->execute();
+        $res = $result/*->as_assoc()*/->execute();
         return $res;
     }
 }

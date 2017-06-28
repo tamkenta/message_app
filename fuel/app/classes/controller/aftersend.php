@@ -14,9 +14,9 @@ class Controller_Aftersend extends Controller
           $code_bmail = 'http://192.168.17.96/register/mail?email='.password_hash($bmail,PASSWORD_DEFAULT);
           if(Sendmail::sendm($bmail,$code_bmail) == true){
             Betain::inbeta($bmail,$code_bmail);
-            $view2->set('add',$bmail);
-            return $view2;
-            
+            //$view2->set('add',$bmail);
+            ///return $view2;
+            Response::redirect("aftersend");
           }else{
             $error = '送信できないアドレスです';
             $view->set('error',$error);
@@ -25,6 +25,6 @@ class Controller_Aftersend extends Controller
         }
         //エラーメッセージをビューにセット
         $view->set('error', $error);
-        return $view;
+        return $view2;
     }
 }

@@ -58,7 +58,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name" required/>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name" required autocomplete="off"/>
 								</div>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 								<div class="input-group">
 									<span class="input-group-addon">
                                     <i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" required disabled value="<?php print($mail);?>" />
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" required disabled value="<?php print($mail);?>" autocomplete="off"/>
 								</div>
 							</div>
 						</div>
