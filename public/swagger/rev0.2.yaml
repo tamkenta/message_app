@@ -1,0 +1,205 @@
+swagger: '2.0'
+info:
+  description: API of Message Application in Ajax
+  version: 1.0.0
+  title: Message App API
+host: 192.168.17.96::80
+basePath: /api
+consumes:
+  - application/x-www-form-urlencoded
+  - application/json
+produces:
+  - application/json
+schemes:
+  - http
+tags:
+  - name: API Message
+    description: メッセージの操作
+  - name: API Mail
+    description: メールの操作
+paths:
+  /create:
+    get:
+      tags:
+        - API Message
+      summary: メッセージの取得
+      description: 最大20件の単一ユーザとのメッセージの取得する
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: request
+          description: ユーザ名
+          type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#definitions/Message'
+  /in:
+    post:
+      tags:
+        - API Message
+      summary: メッセージの登録
+      description: メッセージをpostし、DBに登録する
+      consumes:
+        - application/x-www-form-urlencoded
+      parameters:
+        - in: formData
+          name: mes
+          type: string
+          required: true
+          description: メッセージの内容
+        - in: formData
+          name: user
+          description: ユーザ名
+          type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: obj
+            items:
+              message:
+                type: string
+                description: 結果に対するメッセージ
+  /all:
+    get:
+      tags:
+        - API Message
+      summary: メッセージの取得
+      description: 単一ユーザとのメッセージをDBからすべて取得する
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: request
+          description: ユーザ名
+          type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#definitions/Message'
+  /del:
+    post:
+      tags:
+        - API Message
+      summary: メッセージの削除
+      description: DBから一意のメッセージの削除する
+      produces:
+        - application/x-www-form-urlencoded
+      parameters:
+        - in: formData
+          name: id
+          description: メッセージID
+          type: integer
+          required: true
+      responses:
+        '200':
+          description: OK
+  /recentry:
+    get:
+      tags: 
+        - API Message
+      summary: メッセージから最新の投稿の日時の取得
+      description: ユーザごとにメッセージの最新の投稿日時の取得をする
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#definitions/recentryPost'        
+  /update:
+    post:
+      tags:
+        - API Message
+      summary: メッセージの更新
+      description: メッセージの更新を行う
+      produces:
+        - application/x-www-form-urlencoded
+      parameters:
+        - in: formData
+          name: id
+          description: メッセージID
+          type: integer
+          required: true
+        - in: formData
+          name: editval
+          description: 更新内容
+          type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+  /check:
+    post:
+      tags:
+        - API Mail
+      summary: メールの確認
+      description: メールの存在確認
+      produces:
+        - application/json
+      parameters:
+        - in: formData
+          name: address
+          description: 入力されたメールアドレス
+          type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: obj
+            items:
+              isUse:
+                type: boolean
+                description: すでに存在するアドレスかの二値
+              errorMessage:
+                type: string
+                description: TFに対応したエラーメッセージ
+definitions:
+  Message:
+  type: array
+  description: メッセージのリスト
+  properties:
+    messageProfile:
+      type: object
+      description: メッセージの付与情報
+      items:
+        message_id:
+          type: integer
+          description: メッセージのID
+        username:
+          type: string
+          description: 送信元ユーザ名
+        contents:
+          type: string
+          description: メッセージの内容
+        date:
+          type: string
+          description: 投稿日時
+        touser:
+          type: string
+          description: 送信先ユーザ名
+  recentryPost:
+    type: array
+    description: 最新のメッセージ投稿日時
+    properties:
+      lastdate:
+        type: object
+        description: 最新の投稿情報
+        items:
+          username:
+            type: string
+            description: 送信元ユーザ
+          touser:
+            type: string
+            description: 送信先ユーザ
+          recentry_date:
+            type: string
+            description: 最終投稿メッセージの日時
